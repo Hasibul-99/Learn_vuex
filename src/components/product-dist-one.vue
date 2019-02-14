@@ -9,6 +9,12 @@
             </li>
         </Ul>
 
+        <Ul>
+            <li v-for="product in saleProducts" :key="product.id">
+                <span class="product">{{product.name}}</span>
+                <span class="price">{{product.price}}</span>
+            </li>
+        </Ul>
 
   </div>
 </template>
@@ -18,6 +24,9 @@ export default {
   computed: {
       products() {
           return this.$store.state.products;
+      },
+      saleProducts() {
+          return this.$store.getters.saleProducts;
       }
   }
 }
