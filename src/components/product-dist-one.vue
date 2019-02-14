@@ -3,7 +3,7 @@
       <h2>Product list one</h2>
 
         <Ul>
-            <li v-for="product in products">
+            <li v-for="product in products" :key="product.id">
                 <span class="product">{{product.name}}</span>
                 <span class="price">{{product.price}}</span>
             </li>
