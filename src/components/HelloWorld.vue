@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <product-list-one :products='products'></product-list-one>
-    <product-list-two :products='products'></product-list-two>
+    <product-list-one></product-list-one>
+    <product-list-two></product-list-two>
     
   </div>
 </template>
@@ -15,12 +15,6 @@ export default {
   props: {},
   data () {
     return {
-    products: [
-          {id: '1', name: 'aaaa', price: 25},
-          {id: '2', name: 'bbbb', price: 40},
-          {id: '3', name: 'cccc', price: 55},
-          {id: '4', name: 'dddd', price: 78}
-        ]
     }
   },
   components: {
