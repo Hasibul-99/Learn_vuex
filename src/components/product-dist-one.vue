@@ -16,7 +16,7 @@
             </li>
         </Ul>
 
-        <button @click="reducePrice">Reduce price</button>
+        <button @click="reducePrice(2)">Reduce price</button>
 
   </div>
 </template>
@@ -32,12 +32,18 @@ export default {
       }
   },
   methods: {
-      reducePrice: function() {
+      reducePrice: function(amount) {
         //   this.$store.state.products.forEach(product => {
         //       product.price -=1;
 
         //   });
-        this.$store.commit('reducePrice');
+        
+        // mutations
+        // this.$store.commit('reducePrice');
+
+
+        // active
+        this.$store.dispatch('reducePrice', amount)
       } 
   }
 }
