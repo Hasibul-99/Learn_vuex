@@ -2,12 +2,12 @@
   <div id="product-list-one">
       <h2>Product list one</h2>
 
-        <Ul>
+        <!-- <Ul>
             <li v-for="product in products" :key="product.id">
                 <span class="product">{{product.name}}</span>
                 <span class="price">{{product.price}}</span>
             </li>
-        </Ul>
+        </Ul> -->
 
         <Ul>
             <li v-for="product in saleProducts" :key="product.id">
@@ -15,6 +15,8 @@
                 <span class="price">{{product.price}}</span>
             </li>
         </Ul>
+
+        <button @click="reducePrice">Reduce price</button>
 
   </div>
 </template>
@@ -28,6 +30,15 @@ export default {
       saleProducts() {
           return this.$store.getters.saleProducts;
       }
+  },
+  methods: {
+      reducePrice: function() {
+        //   this.$store.state.products.forEach(product => {
+        //       product.price -=1;
+
+        //   });
+        this.$store.commit('reducePrice');
+      } 
   }
 }
 </script>
